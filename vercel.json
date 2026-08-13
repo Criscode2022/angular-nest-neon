@@ -1,8 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "installCommand": "npm install",
-  "buildCommand": "npx turbo run build --filter=@repo/web --filter=@repo/api",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm exec turbo run build --filter=@repo/web --filter=@repo/api",
   "outputDirectory": "apps/web/dist/web/browser",
   "functions": {
     "api/index.js": {

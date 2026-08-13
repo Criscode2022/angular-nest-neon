@@ -22,6 +22,7 @@ apps/*/dist
 apps/*/node_modules
 packages/*/node_modules
 npm-debug.log
+pnpm-debug.log*
 yarn-error.log
 
 # Turbo

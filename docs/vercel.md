@@ -18,6 +18,8 @@ This monorepo is a **single Vercel project**:
 
 ## First deploy
 
+Install on Vercel uses `pnpm install --frozen-lockfile`. The build is `pnpm exec turbo run build --filter=@repo/web --filter=@repo/api`.
+
 1. `vercel` (or Import Git in the dashboard) from the repo root.
 2. Set the env vars on Production and Preview.
 3. Confirm `/api/health` returns `{ "ok": true }`.

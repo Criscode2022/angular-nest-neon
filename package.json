@@ -3,23 +3,19 @@
   "version": "0.0.1",
   "private": true,
   "description": "Turborepo template — Angular + NestJS + Neon Postgres",
-  "packageManager": "npm@10.9.7",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "packageManager": "pnpm@11.21.0",
   "scripts": {
-    "dev": "turbo run start:dev --filter=@repo/api --filter=@repo/web",
+    "dev": "turbo run start:dev --filter=@repo/api --filter=@repo/web --ui=stream",
     "build": "turbo run build",
     "build:web": "turbo run build --filter=@repo/web",
     "build:api": "turbo run build --filter=@repo/api",
-    "start": "npm run start -w @repo/web",
-    "start:full": "turbo run start:dev --filter=@repo/api --filter=@repo/web",
-    "api": "npm run start:dev -w @repo/api",
-    "config": "npm run config -w @repo/web",
+    "start": "pnpm --filter @repo/web start",
+    "start:full": "turbo run start:dev --filter=@repo/api --filter=@repo/web --ui=stream",
+    "api": "pnpm --filter @repo/api start:dev",
+    "config": "pnpm --filter @repo/web run config",
     "test": "turbo run test",
     "test:ci": "turbo run test:ci --filter=@repo/web",
-    "test:api": "npm run test:api -w @repo/api",
+    "test:api": "pnpm --filter @repo/api test:api",
     "lint": "turbo run lint",
     "lint:ci": "turbo run lint:ci --filter=@repo/web"
   },
@@ -27,6 +23,7 @@
     "turbo": "^2.5.4"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22",
+    "pnpm": ">=11"
   }
 }

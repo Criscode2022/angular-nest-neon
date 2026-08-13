@@ -20,9 +20,9 @@ packages/    Shared packages (empty — add `@repo/types` when needed)
 
 ## Prerequisites
 
-- Node.js 20+
+- Node.js 22+
+- [pnpm](https://pnpm.io) 11+ (`corepack enable` then `corepack prepare pnpm@11.21.0 --activate`)
 - A [Neon](https://console.neon.tech) project
-- npm 10+
 
 ## Getting started
 
@@ -35,8 +35,8 @@ cp .env.example .env
 Fill in `DATABASE_URL` and `JWT_SECRET` (`openssl rand -hex 32`). Tables `users` and `sessions` are created on API boot.
 
 ```bash
-npm install
-npm run start:full
+pnpm install
+pnpm start:full
 ```
 
 - Web: [http://localhost:4200](http://localhost:4200)
@@ -45,22 +45,22 @@ npm run start:full
 Or run them separately:
 
 ```bash
-npm run api      # Nest watch mode
-npm start        # Angular with /api proxy
+pnpm api      # Nest watch mode
+pnpm start    # Angular with /api proxy
 ```
 
 ## Scripts
 
 | Script | Description |
 |--------|-------------|
-| `npm run api` | Nest API in watch mode |
-| `npm start` | Angular dev server |
-| `npm run start:full` | API + web via Turbo |
-| `npm run build` | Build all workspaces |
-| `npm run build:web` / `build:api` | Build one app |
-| `npm test` | Unit tests |
-| `npm run test:api` | API smoke test (API must be running) |
-| `npm run lint` | Lint |
+| `pnpm api` | Nest API in watch mode |
+| `pnpm start` | Angular dev server |
+| `pnpm start:full` | API + web via Turbo (`--ui=stream`) |
+| `pnpm build` | Build all workspaces |
+| `pnpm build:web` / `build:api` | Build one app |
+| `pnpm test` | Unit tests |
+| `pnpm test:api` | API smoke test (API must be running) |
+| `pnpm lint` | Lint |
 
 ## Auth API
 
