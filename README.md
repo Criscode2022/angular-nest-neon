@@ -90,3 +90,7 @@ Passwords are hashed with bcrypt. Sessions live in Neon and are revoked on logou
 3. Root directory stays the repo root. `vercel.json` builds both apps and routes `/api/*` to Nest.
 
 See `docs/vercel.md` and `docs/neon.md`.
+
+## Agent skills
+
+- NestJS: `.claude/skills/nestjs/` — modules, DI, DTO validation, guards, and tests. Use it when changing `apps/api`.
